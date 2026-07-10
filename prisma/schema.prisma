@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Dragao {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  cor       String
+  montador  String
+  vivo      Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
