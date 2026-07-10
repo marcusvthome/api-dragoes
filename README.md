@@ -16,11 +16,11 @@ API REST dos dragões de House of the Dragon, desenvolvida com Node.js, Express,
 
 ### Endpoints
 
-GET    /dragoes         → lista todos os dragões
-POST   /dragoes         → cadastra um dragão
-POST   /dragoes/batch   → cadastra vários dragões de uma vez
-PATCH  /dragoes/:id     → atualiza um dragão
-DELETE /dragoes/:id     → deleta um dragão
+- GET    /dragoes         → lista todos os dragões
+- POST   /dragoes         → cadastra um dragão
+- POST   /dragoes/batch   → cadastra vários dragões de uma vez
+- PATCH  /dragoes/:id     → atualiza um dragão
+- DELETE /dragoes/:id     → deleta um dragão
 
 ## Meu processo
 
