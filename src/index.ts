@@ -1,9 +1,11 @@
 import express from 'express';
+import cors from 'cors'
 import { PrismaClient } from '@prisma/client';
 
 const app = express()
 const prisma = new PrismaClient()
 
+app.use(cors())
 app.use(express.json())
 
 app.get('/dragoes', async (req, res) => {
@@ -11,12 +13,20 @@ app.get('/dragoes', async (req, res) => {
     res.json(dragoes)
 })
 
-app.post('/dragoes', async (req, res) => {
-    const { nome, cor, montador, vivo } = req.body
-    const dragao = await prisma.dragao.create({
-        data: { nome, cor, montador, vivo }
+app.get('/dragoes/:id', async (req, res) => {
+    const { id } = req.params
+    const dragao = await prisma.dragao.findUnique({
+        where: { id: Number(id) }
     })
     res.json(dragao)
+})
+
+app.post('/dragoes', async (req, res) => {
+  const { nome, apelido, imagem, cor, cavaleiro, especie, status, tamanho, descricao } = req.body
+  const dragao = await prisma.dragao.create({
+    data: { nome, apelido, imagem, cor, cavaleiro, especie, status, tamanho, descricao }
+  })
+  res.json(dragao)
 })
 
 // insere vários dragões de uma vez
@@ -28,14 +38,14 @@ app.post('/dragoes/batch', async (req, res) => {
   res.json(resultado)
 })
 
-app.patch('/dragoes/:id', async(req, res) => {
-    const { id } = req.params
-    const { nome, cor, montador, vivo } = req.body
-    const dragao = await prisma.dragao.update({
-        where: { id: Number(id) },
-        data: { nome, cor, montador, vivo }
-    })
-    res.json(dragao)
+app.patch('/dragoes/:id', async (req, res) => {
+  const { id } = req.params
+  const { nome, apelido, imagem, cor, cavaleiro, especie, status, tamanho, descricao } = req.body
+  const dragao = await prisma.dragao.update({
+    where: { id: Number(id) },
+    data: { nome, apelido, imagem, cor, cavaleiro, especie, status, tamanho, descricao }
+  })
+  res.json(dragao)
 })
 
 app.delete('/dragoes/:id', async (req, res) => {

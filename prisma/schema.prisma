@@ -10,8 +10,13 @@ datasource db {
 model Dragao {
   id        Int      @id @default(autoincrement())
   nome      String
+  apelido   String?
+  imagem    String?
   cor       String
-  montador  String
-  vivo      Boolean  @default(true)
+  cavaleiro String?
+  especie   String
+  status    String
+  tamanho   String
+  descricao String
   createdAt DateTime @default(now())
 }
