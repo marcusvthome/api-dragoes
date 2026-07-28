@@ -1,6 +1,6 @@
-# 🐉 API Dragões — House of the Dragon
+# 🐉 API Dragões — Dragonpedia
 
-API REST dos dragões de House of the Dragon, desenvolvida com Node.js, Express, Prisma e SQL Server.
+API REST dos dragões das Crônicas de Gelo e Fogo, desenvolvida com Node.js, Express, Prisma e PostgreSQL.
 
 ## Índice
 
@@ -29,17 +29,17 @@ API REST dos dragões de House of the Dragon, desenvolvida com Node.js, Express,
 - Node.js
 - Express
 - Prisma ORM
-- SQL Server
+- PostgreSQL
 - TypeScript
 - Thunder Client
 
 ### O que aprendi
 
-Essa foi minha primeira experiência construindo uma API do zero. Fiz com calma para entender com clareza cada passo — o que é um endpoint, como funciona o CRUD, o que é um ORM, variáveis de ambiente e string de conexão com banco de dados.
+Essa foi minha primeira experiência construindo uma API do zero. Fiz com calma para entender com clareza cada passo — o que é um endpoint, como funciona o CRUD, o que é um ORM, variáveis de ambiente e string de conexão com banco de dados. Também aprendi na prática como migrar dados entre bancos diferentes (de SQL Server para PostgreSQL), incluindo scripts de migração de dados e deploy em nuvem.
 
 ### Próximos passos
 
-Pretendo conectar essa API com um frontend em Next.js, implementar mais campos para enriquecer os detalhes de cada dragão e criar uma interface visual para apresentar os dados de forma atraente.
+API já conectada a um frontend em Next.js (Dragonpedia). Os próximos passos incluem finalizar o deploy completo em produção e seguir enriquecendo os detalhes de cada dragão.
 
 ## Autor
 
